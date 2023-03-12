@@ -49,9 +49,8 @@ void    bottom_number_go_to_up_and_push_down_by_one_stack_b() {
 //push top of a to top of b (pb)
 void    send_top_of_b_to_top_of_a() {
    int count = 0;
-   int size = s_args.arr_size;
-   char **dst;
-   dst  = malloc(sizeof(char) * 500);
+   int size = count_length_stack_a();
+   char **dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
    int index = 1;
    dst[0] = s_args.stack_b[0];
    while (s_args.stack_a[count]) {

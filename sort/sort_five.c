@@ -1,7 +1,6 @@
 #include "../push_swap.h"
 
 void sort_five_args() {
- s_args.size_b = count_length_stack_a();
  int size = count_length_stack_a();
  int count = 0;
  while (count < size / 2) {
@@ -17,6 +16,5 @@ void sort_five_args() {
  sort_three_args();
  send_top_of_b_to_top_of_a();
  send_top_of_b_to_top_of_a();
- s_args.arr_size += 2;
  return;
 }
