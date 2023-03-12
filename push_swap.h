@@ -45,5 +45,10 @@
     int asccii_to_int(char *str);
     int count_length_stack_a();
     int count_length_stack_b();
+  
+   //sorting function 
+   void sort_five_args();
+   void sort_three_args();
+   void sort_big_nbrs() ;
 
 #endif
