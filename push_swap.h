@@ -9,6 +9,7 @@
         int size_b;
         char **stack_a;
         char **stack_b;
+        int count_actions;
         int arr_size;
     } s_args;
 

@@ -30,20 +30,16 @@ void top_nbr_go_to_bottom_and_shift_up_by_one()
 // rra
 void bottom_number_go_to_up_and_push_down_by_one()
 {
- int count = 0;
+ int count = 1;
  int size = s_args.arr_size - 1;
- char **dst = malloc(sizeof(char *) * 500);
- while (s_args.stack_a[count])
+ char **dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
+ dst[0] = s_args.stack_a[count_length_stack_a() - 1];
+ int index = 0;
+ while (count != count_length_stack_a())
  {
-		if (size == (s_args.arr_size - 1) && count == 0)
-		{
-			dst[count] = s_args.stack_a[size];
-			size--;
-			count++;
-		}
-		dst[count] = s_args.stack_a[count - 1];
-		size--;
-		count++;
+  dst[count] = s_args.stack_a[index];
+  index++;
+  count++;
  }
  s_args.stack_a = dst;
 	printf("rra\n");

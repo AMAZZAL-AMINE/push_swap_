@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
    // send_top_of_b_to_top_of_a();
    // send_top_of_a_to_top_of_b();
    // top_nbr_go_to_bottom_and_shift_up_by_one();
+   // bottom_number_go_to_up_and_push_down_by_one();
     int count = 0;
     printf("_____________ STACK A _________________\n");
     while (s_args.stack_a[count]) {
@@ -26,5 +27,6 @@ int main(int argc, char *argv[])
         printf("%s\n", s_args.stack_b[count]);
         count++;
     }
+    printf("ACTIONS => %d\n", s_args.count_actions);
     return 0;
 }
