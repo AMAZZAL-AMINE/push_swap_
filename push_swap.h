@@ -50,7 +50,7 @@
    //sorting function 
    void sort_five_args();
    void sort_three_args();
-   void sort_big_nbrs() ;
+   void sort_one_hundred_nbrs() ;
    void free_a(char **s);
 
 #endif

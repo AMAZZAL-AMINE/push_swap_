@@ -10,7 +10,6 @@ void    sort_args_using_only_actions()  {
    }else if (s_args.arr_size <= 5 && s_args.arr_size >= 4) {
     sort_five_args();
    }else if (s_args.arr_size > 5) {
-    sort_big_nbrs();
+    sort_one_hundred_nbrs();
    }
-    return ;
 }
