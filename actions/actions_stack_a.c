@@ -14,7 +14,6 @@ void swap_a()
 void top_nbr_go_to_bottom_and_shift_up_by_one()
 {
  int count = 0;
- int size = s_args.arr_size - 1;
  char **dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
  dst[count_length_stack_a() - 1] = s_args.stack_a[0];
  s_args.stack_a += 1;

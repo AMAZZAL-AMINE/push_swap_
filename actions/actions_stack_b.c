@@ -10,55 +10,48 @@ void    swap_b() {
 }
 
 //ra => rotate stack a;
-void    top_nbr_go_to_bottom_and_shift_up_by_one_stack_b() {
-    int count = 0;
-    int size = s_args.arr_size - 1;
-    char **dst = malloc(sizeof(char *) * 500);
-
-    while (s_args.stack_b[count]) {
-        if (count == 0) {
-            dst[size] = s_args.stack_b[count];
-            size--;
-        }
-        dst[size] = s_args.stack_b[size + 1];
-        size--;
-        count++;
-    }
-    s_args.stack_b = dst;
-    printf("rb\n");
+void top_nbr_go_to_bottom_and_shift_up_by_one_stack_b()
+{
+ int count = 0;
+ char **dst = malloc(sizeof(char *) * (count_length_stack_b() + 2));
+ dst[count_length_stack_b() - 1] = s_args.stack_b[0];
+ s_args.stack_b += 1;
+ while (count != (count_length_stack_b()))
+ {
+  dst[count] = s_args.stack_b[count];
+		count++;
+ }
+ s_args.stack_b = dst;
+	printf("rb\n");
+}
+//rrb
+void bottom_number_go_to_up_and_push_down_by_one_stack_b()
+{
+ int count = 1;
+ char **dst = malloc(sizeof(char *) * (count_length_stack_b() + 2));
+ dst[0] = s_args.stack_b[count_length_stack_b() - 1];
+ int index = 0;
+ while (count != count_length_stack_b())
+ {
+  dst[count] = s_args.stack_b[index];
+  index++;
+  count++;
+ }
+ s_args.stack_b = dst;
+	printf("rrb\n");
 }
 
-//rra
-void    bottom_number_go_to_up_and_push_down_by_one_stack_b() {
-    int count = 0;
-    int size = s_args.arr_size - 1;
-    char **dst = malloc(sizeof(char *) * 500);
-    while (s_args.stack_b[count]) {
-        if (size == (s_args.arr_size - 1) && count == 0) {
-            dst[count] = s_args.stack_b[size];
-            size--;
-            count++;
-        }
-        dst[count] = s_args.stack_b[count - 1];
-        size--;
-        count++;
-    }
-    s_args.stack_b = dst;
-}
-
-//push top of a to top of b (pb)
-void    send_top_of_b_to_top_of_a() {
-   int count = 0;
-   int size = count_length_stack_a();
-   char **dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
-   int index = 1;
-   dst[0] = s_args.stack_b[0];
-   while (s_args.stack_a[count]) {
-    dst[index] = s_args.stack_a[count];
-    count++;
-    index++;
-   }
-   s_args.stack_a = dst;
-   s_args.stack_b = s_args.stack_b + 1;
-   printf("pa\n");
+void send_top_of_b_to_top_of_a()
+{
+ int count = 0;
+ int size = count_length_stack_a() + 1;
+ char **dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
+ int index = 1;
+ dst[0] = s_args.stack_b[0];
+ while (count < size) {
+  dst[index++] = s_args.stack_a[count++];
+ }
+ s_args.stack_a = dst;
+ s_args.stack_b = s_args.stack_b + 1;
+	printf("pa\n");
 }

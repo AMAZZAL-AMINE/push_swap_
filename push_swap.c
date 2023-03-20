@@ -9,24 +9,17 @@ int main(int argc, char *argv[])
 
     check_duplaicate_nbrs();
     sort_args_using_only_actions();
-   // s_args.stack_b[0] = "800";
-   // s_args.stack_b[1] = "25";
-   // send_top_of_b_to_top_of_a();
-   // send_top_of_a_to_top_of_b();
-   // top_nbr_go_to_bottom_and_shift_up_by_one();
-   // bottom_number_go_to_up_and_push_down_by_one();
     int count = 0;
-    printf("_____________ STACK A _________________\n");
-    while (s_args.stack_a[count]) {
-      printf("%s\n", s_args.stack_a[count]);
-      count++;
-    }
-    printf("\nSTACK B\n");
-    count = 0;
-    while (s_args.stack_b[count]) {
-        printf("%s\n", s_args.stack_b[count]);
-        count++;
-    }
-    printf("ACTIONS => %d\n", s_args.count_actions);
+    // printf("_____________ STACK A _________________\n");
+    // while (s_args.stack_a[count]) {
+    //   printf("%s\n", s_args.stack_a[count]);
+    //   count++;
+    // }
+    // printf("\n_____________ STACK B _________________B\n");
+    // count = 0;
+    // while (s_args.stack_b[count]) {
+    //     printf("%s\n", s_args.stack_b[count]);
+    //     count++;
+    // }
     return 0;
 }

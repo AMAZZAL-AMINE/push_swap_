@@ -43,6 +43,10 @@
     int find_min_nbr();
     int find_the_max_nbr();
 
+    //find ma nbr nd min nbr function stack b
+    int find_min_nbr_stack_b();
+    int find_the_max_nbr_stack_b();
+   
     int asccii_to_int(char *str);
     int count_length_stack_a();
     int count_length_stack_b();
