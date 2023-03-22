@@ -15,8 +15,8 @@ void top_nbr_go_to_bottom_and_shift_up_by_one_stack_b()
  int count = 0;
  char **dst = malloc(sizeof(char *) * (count_length_stack_b() + 2));
  dst[count_length_stack_b() - 1] = s_args.stack_b[0];
- s_args.stack_b += 1;
- while (count != (count_length_stack_b()))
+ s_args.stack_b = s_args.stack_b + 1;
+ while (count < (count_length_stack_b()))
  {
   dst[count] = s_args.stack_b[count];
 		count++;
@@ -37,6 +37,7 @@ void bottom_number_go_to_up_and_push_down_by_one_stack_b()
   index++;
   count++;
  }
+
  s_args.stack_b = dst;
 	printf("rrb\n");
 }

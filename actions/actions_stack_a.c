@@ -37,7 +37,7 @@ void bottom_number_go_to_up_and_push_down_by_one()
  while (count != count_length_stack_a())
  {
   dst[count] = s_args.stack_a[index];
-  index++;
+  index++; 
   count++;
  }
  s_args.stack_a = dst;
