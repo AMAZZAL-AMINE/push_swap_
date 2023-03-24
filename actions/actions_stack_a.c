@@ -30,7 +30,6 @@ void top_nbr_go_to_bottom_and_shift_up_by_one()
 void bottom_number_go_to_up_and_push_down_by_one()
 {
  int count = 1;
- int size = s_args.arr_size - 1;
  char **dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
  dst[0] = s_args.stack_a[count_length_stack_a() - 1];
  int index = 0;

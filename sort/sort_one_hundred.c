@@ -4,30 +4,27 @@
 void sort_one_hundred_nbrs() {
  int size = count_length_stack_a() - 1;
  int count = 0;
- s_args.count_actions = 0; 
 
- int rone = 0;
- int rtwo = 15;
- while (s_args.stack_a[count]) {
-  if (asccii_to_int(s_args.stack_a[0]) >= rone && asccii_to_int(s_args.stack_a[0]) <= rtwo) {
-   send_top_of_a_to_top_of_b();
-   rone++;
-   rtwo++;
-   count = 0;
+ int range_min = 0;
+ int range_max = 15;
+ 
+ while (count_length_stack_a() - 1) {
+  if (asccii_to_int(s_args.stack_a[0]) >= range_min && 
+   asccii_to_int(s_args.stack_a[0]) <= range_max) {
+    send_top_of_a_to_top_of_b();
   }
-  if (asccii_to_int(s_args.stack_a[0]) < rone) {
+
+  if (asccii_to_int(s_args.stack_a[0]) < range_min) {
    send_top_of_a_to_top_of_b();
    top_nbr_go_to_bottom_and_shift_up_by_one_stack_b();
-   rone++;
-   rtwo++;
   }
-  if (asccii_to_int(s_args.stack_a[0]) > rtwo) {
+  if (asccii_to_int(s_args.stack_a[0]) > range_max) {
    top_nbr_go_to_bottom_and_shift_up_by_one();
+   range_max++;
+   range_min++;
   }
-  count++;
  }
 
- //find where is the max nbr
  count = 0;
  int pos_max = 0;
  int index = 0;
@@ -58,4 +55,5 @@ void sort_one_hundred_nbrs() {
   }
   send_top_of_b_to_top_of_a();
  }
+
 }

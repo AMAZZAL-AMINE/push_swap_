@@ -54,3 +54,4 @@ char **get_all_args(char **args) {
     s_args.arr_size = j;
     return arr;
 }
+ 
