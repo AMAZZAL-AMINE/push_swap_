@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-int asccii_to_int(char *str)
+int ft_atoi(char *str)
 {
     int count = 0;
     int ismis = 1;

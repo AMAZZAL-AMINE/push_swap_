@@ -9,7 +9,7 @@ char **bubble_sort() {
     while (arr[count]) {
         index = 0;
         while (arr[index + 1]) {
-            if (asccii_to_int(arr[index]) > asccii_to_int(arr[index + 1])) {
+            if (ft_atoi(arr[index]) > ft_atoi(arr[index + 1])) {
                 tmp = arr[index];
                 arr[index] = arr[index + 1];
                 arr[index + 1] = tmp;

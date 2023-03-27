@@ -14,8 +14,8 @@ void sort_big() {
  }
  while (count_length_stack_a() - 1) {
   if (sorted_arr[range_max] && 
-   asccii_to_int(s_args.stack_a[0]) >= asccii_to_int(sorted_arr[range_min]) && 
-   asccii_to_int(s_args.stack_a[0]) <= asccii_to_int(sorted_arr[range_max])) {
+   ft_atoi(s_args.stack_a[0]) >= ft_atoi(sorted_arr[range_min]) && 
+   ft_atoi(s_args.stack_a[0]) <= ft_atoi(sorted_arr[range_max])) {
     send_top_of_a_to_top_of_b();
     size--;
     if (range_max < end) {
@@ -24,7 +24,7 @@ void sort_big() {
     }
   }
 
-  if (asccii_to_int(s_args.stack_a[0]) < asccii_to_int(sorted_arr[range_min])) {
+  if (ft_atoi(s_args.stack_a[0]) < ft_atoi(sorted_arr[range_min])) {
    send_top_of_a_to_top_of_b();
    top_nbr_go_to_bottom_and_shift_up_by_one_stack_b();
    size--;
@@ -34,7 +34,7 @@ void sort_big() {
     }
   }
   if (sorted_arr[range_max] &&
-    asccii_to_int(s_args.stack_a[0]) > asccii_to_int(sorted_arr[range_max])) {
+    ft_atoi(s_args.stack_a[0]) > ft_atoi(sorted_arr[range_max])) {
     top_nbr_go_to_bottom_and_shift_up_by_one();
   }
  }
@@ -53,7 +53,7 @@ void sort_big() {
   //first fined the position of the bigest number
   index = 0;
   while (s_args.stack_b[index]) {
-   if (asccii_to_int(s_args.stack_b[index]) == find_the_max_nbr_stack_b()) {
+   if (ft_atoi(s_args.stack_b[index]) == find_the_max_nbr_stack_b()) {
     pos_max = index;
     break;
    }

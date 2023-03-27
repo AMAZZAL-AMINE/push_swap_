@@ -2,11 +2,11 @@
 
 int find_the_max_nbr_stack_b() {
     int count = 0;
-    int max_nbr = asccii_to_int(s_args.stack_b[0]);
+    int max_nbr = ft_atoi(s_args.stack_b[0]);
 
     while (s_args.stack_b[count]) {
-     if (asccii_to_int(s_args.stack_b[count]) > max_nbr) {
-      max_nbr = asccii_to_int(s_args.stack_b[count]);
+     if (ft_atoi(s_args.stack_b[count]) > max_nbr) {
+      max_nbr = ft_atoi(s_args.stack_b[count]);
      }
      count++;
     }
@@ -15,10 +15,10 @@ int find_the_max_nbr_stack_b() {
 
 int find_min_nbr_stack_b() {
     int count = 0;
-    int min_nbr = asccii_to_int(s_args.stack_b[0]);
+    int min_nbr = ft_atoi(s_args.stack_b[0]);
     while (s_args.stack_b[count]) {
-     if (asccii_to_int(s_args.stack_b[count]) < min_nbr) {
-      min_nbr = asccii_to_int(s_args.stack_b[count]);
+     if (ft_atoi(s_args.stack_b[count]) < min_nbr) {
+      min_nbr = ft_atoi(s_args.stack_b[count]);
      }
      count++;
     }

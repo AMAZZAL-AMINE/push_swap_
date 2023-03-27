@@ -47,7 +47,7 @@
     int find_min_nbr_stack_b();
     int find_the_max_nbr_stack_b();
    
-    int asccii_to_int(char *str);
+    int ft_atoi(char *str);
     int count_length_stack_a();
     int count_length_stack_b();
   
