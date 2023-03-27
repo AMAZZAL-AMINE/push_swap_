@@ -1,11 +1,11 @@
 #include "../push_swap.h"
 
-void sort_one_hundred_nbrs() {
+void sort_big() {
  int size = count_length_stack_a() - 1;
  int count = 0;
 
  int range_min = 0;
- int range_max = 15;
+ int range_max = 39;
  int end = count_length_stack_a() - 1;
  char **sorted_arr = bubble_sort();
 
@@ -17,6 +17,7 @@ void sort_one_hundred_nbrs() {
    asccii_to_int(s_args.stack_a[0]) >= asccii_to_int(sorted_arr[range_min]) && 
    asccii_to_int(s_args.stack_a[0]) <= asccii_to_int(sorted_arr[range_max])) {
     send_top_of_a_to_top_of_b();
+    size--;
     if (range_max < end) {
      range_max++;
      range_min++;
@@ -26,6 +27,7 @@ void sort_one_hundred_nbrs() {
   if (asccii_to_int(s_args.stack_a[0]) < asccii_to_int(sorted_arr[range_min])) {
    send_top_of_a_to_top_of_b();
    top_nbr_go_to_bottom_and_shift_up_by_one_stack_b();
+   size--;
     if (range_max < end) {
      range_max++;
      range_min++;
@@ -40,16 +42,15 @@ void sort_one_hundred_nbrs() {
    send_top_of_a_to_top_of_b();
  }
 
-/**
- *
- * sorting from stack b
- * 
-*/
+ /**
+  * 
+  * sorting from stack b
+ */
  count = 0;
  int pos_max = 0;
  int index = 0;
  while (count_length_stack_b()) {
-  //fisr fine the position of the bigest number
+  //first fined the position of the bigest number
   index = 0;
   while (s_args.stack_b[index]) {
    if (asccii_to_int(s_args.stack_b[index]) == find_the_max_nbr_stack_b()) {

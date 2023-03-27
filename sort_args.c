@@ -9,7 +9,10 @@ void    sort_args_using_only_actions()  {
      sort_three_args();
    }else if (s_args.arr_size <= 5 && s_args.arr_size >= 4) {
     sort_five_args();
-   }else if (s_args.arr_size > 5) {
+   }else if (s_args.arr_size > 5 && s_args.arr_size <= 100) {
     sort_one_hundred_nbrs();
+   }else if (s_args.arr_size > 100) {
+    //todo fix problem sigf while we put 102 args
+     sort_big();
    }
 }

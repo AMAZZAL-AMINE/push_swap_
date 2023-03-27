@@ -9,6 +9,7 @@
         int size_b;
         char **stack_a;
         char **stack_b;
+        char **fake_args;
         int count_actions;
         int arr_size;
     } s_args;
@@ -20,8 +21,7 @@
     /* libft functions */
     void	*ft_calloc(size_t count, size_t size);
 
-    //jandlage
-    void check_duplaicate_nbrs();
+
     /* actions stack a */
    void swap_a();
    void top_nbr_go_to_bottom_and_shift_up_by_one();
@@ -55,6 +55,16 @@
    void sort_five_args();
    void sort_three_args();
    void sort_one_hundred_nbrs() ;
+   void sort_big();
+
+   //free
    void free_a(char **s);
+
+   //bubble sort
+   char **bubble_sort();
+   
+   //jandlage
+    void check_duplaicate_nbrs();
+    void check_valid_numbers();
 
 #endif

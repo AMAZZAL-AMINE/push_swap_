@@ -5,13 +5,16 @@ int asccii_to_int(char *str)
     int count = 0;
     int ismis = 1;
     int result = 0;
-
+    if (str[0] == '-') {
+     ismis = - 1;
+     count++;
+    }
     while (str[count] >= '0' && str[count] <= '9')
     {
         result = (result * 10) + (str[count] - 48);
         count++;
     }
-    return result;
+    return result * ismis;
 }
 
 char *get_tal_space(char *str) {
