@@ -63,8 +63,9 @@
    //bubble sort
    char **bubble_sort();
    
-   //jandlage
+   //handlage
     void check_duplaicate_nbrs();
     void check_valid_numbers();
+    void check_if_already_sorted();
 
 #endif

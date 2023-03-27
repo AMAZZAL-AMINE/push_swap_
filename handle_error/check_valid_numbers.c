@@ -13,8 +13,10 @@ void check_valid_numbers() {
  while (s_args.stack_a[count]) {
   index = 0;
   while (s_args.stack_a[count][index]) {
-    if (is_num(s_args.stack_a[count][index]) || s_args.stack_a[count][index] == '-') {
-       if (s_args.stack_a[count][index] == '-') {
+    if (is_num(s_args.stack_a[count][index]) 
+     || s_args.stack_a[count][index] == '-'
+     || s_args.stack_a[count][index] == '+') {
+       if (s_args.stack_a[count][index] == '-' || s_args.stack_a[count][index] == '+') {
          if(index != 0) {
            printf("Error\n");
            exit(1);

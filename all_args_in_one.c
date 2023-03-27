@@ -5,8 +5,10 @@ int asccii_to_int(char *str)
     int count = 0;
     int ismis = 1;
     int result = 0;
-    if (str[0] == '-') {
-     ismis = - 1;
+    if (str[0] == '-' || str[0] == '+') {
+     if (str[0] == '-') {
+      ismis = - 1;
+     }
      count++;
     }
     while (str[count] >= '0' && str[count] <= '9')
@@ -57,4 +59,3 @@ char **get_all_args(char **args) {
     s_args.arr_size = j;
     return arr;
 }
- 
