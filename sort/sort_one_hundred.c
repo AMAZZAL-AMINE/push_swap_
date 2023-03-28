@@ -12,6 +12,10 @@ void sort_one_hundred_nbrs() {
  if (range_max > end) {
   range_max = end;
  }
+ while (s_args.stack_a[count_length_stack_a() - 1] && 
+  ft_atoi(s_args.stack_a[count_length_stack_a() - 1]) <= ft_atoi(sorted_arr[range_max])) {
+   bottom_number_go_to_up_and_push_down_by_one();
+ }
  while (count_length_stack_a() - 1) {
   if (sorted_arr[range_max] && 
    ft_atoi(s_args.stack_a[0]) >= ft_atoi(sorted_arr[range_min]) && 

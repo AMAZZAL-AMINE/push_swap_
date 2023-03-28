@@ -5,14 +5,20 @@ void sort_big() {
  int count = 0;
 
  int range_min = 0;
- int range_max = 39;
+ int range_max = 38;
  int end = count_length_stack_a() - 1;
  char **sorted_arr = bubble_sort();
 
  if (range_max > end) {
   range_max = end;
  }
+ while (s_args.stack_a[count_length_stack_a() - 1] && 
+   ft_atoi(s_args.stack_a[count_length_stack_a() - 1]) <= ft_atoi(sorted_arr[range_max])) {
+    bottom_number_go_to_up_and_push_down_by_one();
+ }
+
  while (count_length_stack_a() - 1) {
+
   if (sorted_arr[range_max] && 
    ft_atoi(s_args.stack_a[0]) >= ft_atoi(sorted_arr[range_min]) && 
    ft_atoi(s_args.stack_a[0]) <= ft_atoi(sorted_arr[range_max])) {

@@ -37,7 +37,7 @@ char *get_tal_space(char *str) {
 
 char **get_all_args(char **args) {
     int count = 0;
-    char **arr = malloc(sizeof(char *) * 500);
+    char **arr = malloc(sizeof(char *) * 10000);
     int i = 0;
     int j = 0;
     while (args[count])
