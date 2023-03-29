@@ -14,6 +14,6 @@ int main(int argc, char *argv[])
     check_duplaicate_nbrs();
     check_if_already_sorted();
     sort_args_using_only_actions();
-    
+
     return 0;
 }
