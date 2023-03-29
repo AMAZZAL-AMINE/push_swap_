@@ -1,61 +1,93 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   all_args_in_one.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/29 17:56:32 by mamazzal          #+#    #+#             */
+/*   Updated: 2023/03/29 18:01:08 by mamazzal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-int ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-    int count = 0;
-    int ismis = 1;
-    int result = 0;
-    if (str[0] == '-' || str[0] == '+') {
-     if (str[0] == '-') {
-      ismis = - 1;
-     }
-     count++;
-    }
-    while (str[count] >= '0' && str[count] <= '9')
-    {
-        result = (result * 10) + (str[count] - 48);
-        count++;
-    }
-    return result * ismis;
+	int	count;
+	int	ismis;
+	int	result;
+
+	count = 0;
+	ismis = 1;
+	result = 0;
+	if (str[0] == '-' || str[0] == '+')
+	{
+		if (str[0] == '-')
+		{
+			ismis = -1;
+		}
+		count++;
+	}
+	while (str[count] >= '0' && str[count] <= '9')
+	{
+		result = (result * 10) + (str[count] - 48);
+		count++;
+	}
+	return (result * ismis);
 }
 
-char *get_tal_space(char *str) {
- int count = 0;
- char *dst;
- while (str[count] != ' ' && str[count] != '\0') {
-  count++;
- }
- dst = malloc((count + 1) * sizeof(char));
- count = 0;
- while (str[count] != ' ' && str[count] != '\0') {
-  dst[count] = str[count];
-  count++;
- }
- dst[count] = 0;
- return dst;
+char	*get_tal_space(char *str)
+{
+	int		count;
+	char	*dst;
+
+	count = 0;
+	while (str[count] != ' ' && str[count] != '\0')
+	{
+		count++;
+	}
+	dst = malloc((count + 1) * sizeof(char));
+	count = 0;
+	while (str[count] != ' ' && str[count] != '\0')
+	{
+		dst[count] = str[count];
+		count++;
+	}
+	dst[count] = 0;
+	return (dst);
 }
 
-char **get_all_args(char **args) {
-    int count = 0;
-    char **arr = malloc(sizeof(char *) * 10000);
-    int i = 0;
-    int j = 0;
-    while (args[count])
-    {
-        while (args[count][i]) {
-            if (args[count][i] == ' ') {
-                i++;
-            }
-            if ((args[count][i] != ' ' && (args[count][i - 1] == ' ' 
-                ||  args[count][i - 1] == '\0'))) {
-                arr[j] = get_tal_space(args[count] + i);
-                j++;
-            }
-            i++;
-        }
-        i = 0;
-        count++;
-    }
-    s_args.arr_size = j;
-    return arr;
+char	**get_all_args(char **args)
+{
+	int		count;
+	char	**arr;
+	int		i;
+	int		j;
+
+	j = 0;
+	i = 0;
+	count = 0;
+	arr = malloc(sizeof(char *) * 10000);
+	while (args[count])
+	{
+		while (args[count][i])
+		{
+			if (args[count][i] == ' ')
+			{
+				i++;
+			}
+			if ((args[count][i] != ' '
+				&& (args[count][i - 1] == ' ' || args[count][i - 1] == '\0')))
+			{
+				arr[j] = get_tal_space(args[count] + i);
+				j++;
+			}
+			i++;
+		}
+		i = 0;
+		count++;
+	}
+	s_args.arr_size = j;
+	return (arr);
 }
