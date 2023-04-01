@@ -6,17 +6,17 @@
 /*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:56:32 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/03/29 18:01:08 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/01 16:04:52 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *str)
+long	ft_atoi(char *str)
 {
-	int	count;
-	int	ismis;
-	int	result;
+	int		count;
+	int		ismis;
+	long	result;
 
 	count = 0;
 	ismis = 1;
@@ -74,15 +74,10 @@ char	**get_all_args(char **args)
 		while (args[count][i])
 		{
 			if (args[count][i] == ' ')
-			{
 				i++;
-			}
 			if ((args[count][i] != ' '
 				&& (args[count][i - 1] == ' ' || args[count][i - 1] == '\0')))
-			{
-				arr[j] = get_tal_space(args[count] + i);
-				j++;
-			}
+				arr[j++] = get_tal_space(args[count] + i);
 			i++;
 		}
 		i = 0;

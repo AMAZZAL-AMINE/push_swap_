@@ -1,71 +1,64 @@
-#ifndef PUSH_SWAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/31 17:21:32 by mamazzal          #+#    #+#             */
+/*   Updated: 2023/04/01 15:23:19 by mamazzal         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#	ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-    #include <unistd.h>
-    #include <stdlib.h>
-    #include <stdio.h>
-    #include <limits.h>
-    struct args_info {
-        int size_b;
-        char **stack_a;
-        char **stack_b;
-        char **fake_args;
-        int count_actions;
-        int arr_size;
-    } s_args;
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <limits.h>
 
-    char **get_all_args(char **args);
+struct s_args_info
+{
+	int		size_b;
+	char	**stack_a;
+	char	**stack_b;
+	char	**fake_args;
+	int		count_actions;
+	int		arr_size;
+} s_args;
 
-    //swaper sorting
-    void    sort_args_using_only_actions();
-    /* libft functions */
-    void	*ft_calloc(size_t count, size_t size);
-
-
-    /* actions stack a */
-   void swap_a();
-   void top_nbr_go_to_bottom_and_shift_up_by_one();
-   void bottom_number_go_to_up_and_push_down_by_one();
-   void send_top_of_a_to_top_of_b();
-
-    /* actions stack b */
-   void swap_b();
-   void send_top_of_b_to_top_of_a();
-   void top_nbr_go_to_bottom_and_shift_up_by_one_stack_b();
-   void bottom_number_go_to_up_and_push_down_by_one_stack_b();
-
-    //both: all in one (actions)
-    void run_sa_and_sb_at_same_time();
-    void run_ra_and_rb_at_ame_time();
-    void run_rra_and_rrb_at_same_time();
-
-    //find ma nbr nd min nbr function
-    int find_min_nbr();
-    int find_the_max_nbr();
-
-    //find ma nbr nd min nbr function stack b
-    int find_min_nbr_stack_b();
-    int find_the_max_nbr_stack_b();
-   
-    int ft_atoi(char *str);
-    int count_length_stack_a();
-    int count_length_stack_b();
-  
-   //sorting function 
-   void sort_five_args();
-   void sort_three_args();
-   void sort_one_hundred_nbrs() ;
-   void sort_big();
-
-   //free
-   void free_a(char **s);
-
-   //bubble sort
-   char **bubble_sort();
-   
-   //handlage
-    void check_duplaicate_nbrs();
-    void check_valid_numbers();
-    void check_if_already_sorted();
+char	**get_all_args(char **args);
+void	sort_args_using_only_actions(void);
+void	swap_a(void);
+void	top_nbr_go_to_bottom_and_shift_up_by_one(void);
+void	bottom_number_go_to_up_and_push_down_by_one(void);
+void	send_top_of_a_to_top_of_b(void);
+void	swap_b(void);
+void	send_top_of_b_to_top_of_a(void);
+void	top_nbr_go_to_bottom_and_shift_up_by_one_stack_b(void);
+void	bottom_number_go_to_up_and_push_down_by_one_stack_b(void);
+void	run_sa_and_sb_at_same_time(void);
+void	run_ra_and_rb_at_ame_time(void);
+void	run_rra_and_rrb_at_same_time(void);
+int		find_min_nbr(void);
+int		find_the_max_nbr(void);
+int		find_min_nbr_stack_b(void);
+int		find_the_max_nbr_stack_b(void);
+long	ft_atoi(char *str);
+int		count_length_stack_a(void);
+int		count_length_stack_b(void);
+void	sort_five_args(void);
+void	sort_three_args(void);
+void	sort_one_hundred_nbrs(void);
+void	sort_big(void);
+void	sorting_from_stack_b(void);
+void	free_a(char **s);
+char	**bubble_sort(void);
+void	check_duplaicate_nbrs(void);
+void	check_valid_numbers(void);
+void	check_if_already_sorted(void);
+void	check_max_and_min(void);
+void	ft_putstr(char *str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:23:23 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/03/29 13:47:16 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/01 14:03:24 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_num(char c)
 
 void	error_msg(void)
 {
-	printf("Error\n");
+	ft_putstr("Error\n");
 	exit(1);
 }
 

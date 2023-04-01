@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_max_and_min.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/30 22:14:36 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/01 16:09:13 by mamazzal         ###   ########.fr       */
+/*   Created: 2023/03/31 17:35:50 by mamazzal          #+#    #+#             */
+/*   Updated: 2023/04/01 14:03:24 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char *argv[])
+void	check_max_and_min(void)
 {
-	if (argc == 1)
+	int	count;
+
+	count = 0;
+	while (s_args.stack_a[count])
 	{
-		printf("Error\n");
-		exit(1);
+		if (ft_atoi(s_args.stack_a[count]) > 2147483647
+			|| ft_atoi(s_args.stack_a[count]) < -2147483648)
+		{
+			ft_putstr("Error\n");
+			exit(1);
+		}
+		count++;
 	}
-	s_args.stack_a = get_all_args(argv + 1);
-	s_args.stack_b = malloc(count_length_stack_a() * sizeof(char));
-	s_args.fake_args = get_all_args(argv + 1);
-	check_max_and_min();
-	check_valid_numbers();
-	check_duplaicate_nbrs();
-	check_if_already_sorted();
-	sort_args_using_only_actions();
-	return (0);
 }
