@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:23:23 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/01 14:03:24 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/03 20:46:49 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	check_valid_numbers(void)
 	int	c;
 	int	i;
 
-	c = 0;
-	while (s_args.stack_a[c])
+	c = -1;
+	while (s_args.stack_a[++c])
 	{
 		i = 0;
 		while (s_args.stack_a[c][i])
@@ -51,6 +51,5 @@ void	check_valid_numbers(void)
 			else
 				error_msg();
 		}
-		c++;
 	}
 }

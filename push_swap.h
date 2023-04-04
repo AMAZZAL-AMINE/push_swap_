@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:21:32 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/01 15:23:19 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/03 22:45:59 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ struct s_args_info
 	int		arr_size;
 } s_args;
 
-char	**get_all_args(char **args);
+char	**get_all_args(char *args);
 void	sort_args_using_only_actions(void);
 void	swap_a(void);
 void	top_nbr_go_to_bottom_and_shift_up_by_one(void);
@@ -60,5 +60,10 @@ void	check_valid_numbers(void);
 void	check_if_already_sorted(void);
 void	check_max_and_min(void);
 void	ft_putstr(char *str);
+void	check_empty_args(char **args);
+int count_numbers_in_args(char *args);
+char	*get_tal_space(char *str);
+int count_items_in_argv(char **av);
+char *set_argv_in_one_array(char **av);
 
 #endif
