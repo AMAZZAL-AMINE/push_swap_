@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:56:32 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/04 18:37:47 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/05 22:43:08 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,18 @@ char	*get_tal_space(char *str)
 	int		count;
 	char	*dst;
 
+	dst = NULL;
 	count = 0;
 	while (str[count] != ' ' && str[count] != '\0')
 	{
 		count++;
 	}
 	dst = malloc((count + 1) * sizeof(char));
-	if (!dst)
-		return (NULL);
 	count = 0;
 	while (str[count] != ' ' && str[count] != '\0')
 	{
-		dst[count] = str[count];
-		count++;
+			dst[count] = str[count];
+			count++;
 	}
 	dst[count] = '\0';
 	return (dst);
@@ -97,6 +96,8 @@ int	count_numbers_in_args(char *args)
 		{
 			count++;
 		}
+		if (args[count] == '\0')
+			break ;
 		save++;
 		while (args[count] != ' ' && args[count] != '\0')
 		{
@@ -110,27 +111,26 @@ char	**get_all_args(char *args)
 {
 	int		count;
 	int		index;
+	int		arg_size;
 	char	**dst;
 
+	dst = NULL;
 	count = 0;
 	index = 0;
 	dst = malloc(sizeof(char *) * (count_numbers_in_args(args) + 1));
-	while (args[count])
+	arg_size = count_numbers_in_args(args);
+	while (arg_size)
 	{
 		while (args[count] == ' ' && args[count] != '\0')
-		{
 			count++;
-		}
 		if (args[count] == '\0')
 			break ;
 		dst[index] = get_tal_space(&args[count]);
 		index++;
 		while (args[count] != ' ' && args[count] != '\0')
-		{
 			count++;
-		}
+		arg_size--;
 	}
-	s_args.arr_size = index;
 	dst[index] = NULL;
 	return (dst);
 }
