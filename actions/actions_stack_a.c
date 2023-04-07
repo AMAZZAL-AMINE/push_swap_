@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:17:09 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/01 15:44:58 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/07 15:00:23 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,17 @@ void	swap_a(void)
 void	top_nbr_go_to_bottom_and_shift_up_by_one(void)
 {
 	int		count;
-	char	**dst;
+	char	*top_elemn;
 
-	count = 0;
-	dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
-	dst[count_length_stack_a() - 1] = s_args.stack_a[0];
-	s_args.stack_a += 1;
-	while (count != (count_length_stack_a()))
+	//no leaks
+	top_elemn = s_args.stack_a[0];
+	count	= 0;
+	while (count != (count_length_stack_a() - 1))
 	{
-		dst[count] = s_args.stack_a[count];
+		s_args.stack_a[count] = s_args.stack_a[count + 1];
 		count++;
 	}
-	s_args.stack_a = dst;
+	s_args.stack_a[count] = top_elemn;
 	printf("ra\n");
 }
 
@@ -46,22 +45,21 @@ void	top_nbr_go_to_bottom_and_shift_up_by_one(void)
 void	bottom_number_go_to_up_and_push_down_by_one(void)
 {
 	int		count;
-	char	**dst;
 	int		index;
+	char	*last_elemn;
 
-	count = 1;
+	count = count_length_stack_a() - 1;
 	index = 0;
-	dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
-	dst[0] = s_args.stack_a[count_length_stack_a() - 1];
-	while (count != count_length_stack_a())
+	last_elemn = s_args.stack_a[count_length_stack_a() - 1];
+	while (count)
 	{
-		dst[count] = s_args.stack_a[index];
-		index++;
-		count++;
+			s_args.stack_a[count] = s_args.stack_a[count - 1];
+			count--;
 	}
-	s_args.stack_a = dst;
+	s_args.stack_a[0] = last_elemn;
 	printf("rra\n");
 }
+
 
 // push top of a to top of b (pb)
 void	send_top_of_a_to_top_of_b(void)

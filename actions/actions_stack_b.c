@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:24:49 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/01 15:23:11 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/06 23:46:16 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,22 +23,21 @@ void	swap_b(void)
 	printf("sb\n");
 }
 
-// ra => rotate stack a;
+// rb => rotate stack b;
 void	top_nbr_go_to_bottom_and_shift_up_by_one_stack_b(void)
 {
 	int		count;
-	char	**dst;
+	char	*top_elemn;
 
-	count = 0;
-	dst = malloc(sizeof(char *) * (count_length_stack_b() + 2));
-	dst[count_length_stack_b() - 1] = s_args.stack_b[0];
-	s_args.stack_b = s_args.stack_b + 1;
-	while (count < (count_length_stack_b()))
+	//no leaks
+	top_elemn = s_args.stack_b[0];
+	count	= 0;
+	while (count != (count_length_stack_b() - 1))
 	{
-		dst[count] = s_args.stack_b[count];
+		s_args.stack_b[count] = s_args.stack_b[count + 1];
 		count++;
 	}
-	s_args.stack_b = dst;
+	s_args.stack_b[count] = top_elemn;
 	printf("rb\n");
 }
 
@@ -46,20 +45,18 @@ void	top_nbr_go_to_bottom_and_shift_up_by_one_stack_b(void)
 void	bottom_number_go_to_up_and_push_down_by_one_stack_b(void)
 {
 	int		count;
-	char	**dst;
 	int		index;
+	char	*last_elemn;
 
-	count = 1;
+	count = count_length_stack_b() - 1;
 	index = 0;
-	dst = malloc(sizeof(char *) * (count_length_stack_b() + 2));
-	dst[0] = s_args.stack_b[count_length_stack_b() - 1];
-	while (count != count_length_stack_b())
+	last_elemn = s_args.stack_b[count_length_stack_b() - 1];
+	while (count)
 	{
-		dst[count] = s_args.stack_b[index];
-		index++;
-		count++;
+			s_args.stack_b[count] = s_args.stack_b[count - 1];
+			count--;
 	}
-	s_args.stack_b = dst;
+	s_args.stack_b[0] = last_elemn;
 	printf("rrb\n");
 }
 
@@ -79,7 +76,8 @@ void	send_top_of_b_to_top_of_a(void)
 	{
 		dst[index++] = s_args.stack_a[count++];
 	}
+ dst[index + 1] = NULL;
 	s_args.stack_a = dst;
-	s_args.stack_b = s_args.stack_b + 1;
+ s_args.stack_b = s_args.stack_b + 1;
 	printf("pa\n");
 }
