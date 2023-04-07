@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:20:15 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/05 23:38:03 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:32:43 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ void	sort_big(void)
 		}
 	}
 	if (s_args.stack_a[0])
-		send_top_of_a_to_top_of_b();
+	send_top_of_a_to_top_of_b();
 	sorting_from_stack_b();
 }

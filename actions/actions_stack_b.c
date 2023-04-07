@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions_stack_b.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:24:49 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/06 23:46:16 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/07 21:45:51 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,20 +64,19 @@ void	send_top_of_b_to_top_of_a(void)
 {
 	int		count;
 	int		size;
-	char	**dst;
+	char	*dst[sizeof(char) * (count_length_stack_a() + 2)];
 	int		index;
 
 	count = 0;
 	index = 1;
 	size = count_length_stack_a() + 1;
-	dst = malloc(sizeof(char *) * (count_length_stack_a() + 2));
 	dst[0] = s_args.stack_b[0];
 	while (count < size)
 	{
 		dst[index++] = s_args.stack_a[count++];
 	}
- dst[index + 1] = NULL;
+ 	dst[index] = NULL;
 	s_args.stack_a = dst;
- s_args.stack_b = s_args.stack_b + 1;
+	s_args.stack_b = s_args.stack_b + 1;
 	printf("pa\n");
 }

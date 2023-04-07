@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   actions_stack_a.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:17:09 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/07 15:00:23 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/07 21:46:06 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,9 @@ void	send_top_of_a_to_top_of_b(void)
 	{
 		dst[index++] = s_args.stack_b[count++];
 	}
+	if (s_args.stack_b)
+		free(s_args.stack_b);
+	dst[index] = NULL;
 	s_args.stack_b = dst;
 	s_args.stack_a += 1;
 	printf("pb\n");
