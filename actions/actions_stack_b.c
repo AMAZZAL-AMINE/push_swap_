@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:24:49 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/07 21:45:51 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/08 21:14:50 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,23 +60,23 @@ void	bottom_number_go_to_up_and_push_down_by_one_stack_b(void)
 	printf("rrb\n");
 }
 
-void	send_top_of_b_to_top_of_a(void)
+void send_top_of_b_to_top_of_a(void)
 {
-	int		count;
-	int		size;
-	char	*dst[sizeof(char) * (count_length_stack_a() + 2)];
-	int		index;
-
-	count = 0;
-	index = 1;
-	size = count_length_stack_a() + 1;
-	dst[0] = s_args.stack_b[0];
-	while (count < size)
+	char *top_of_b = s_args.stack_b[0];
+	int count = count_length_stack_a();
+	int i = 0;
+	while (count)
 	{
-		dst[index++] = s_args.stack_a[count++];
+		s_args.stack_a[count] = s_args.stack_a[count - 1];
+		count--;
 	}
- 	dst[index] = NULL;
-	s_args.stack_a = dst;
-	s_args.stack_b = s_args.stack_b + 1;
+	s_args.stack_a[0] = top_of_b;
+	count = count_length_stack_b();
+	i = 0;
+	while (i < count)
+	{
+		s_args.stack_b[i] = s_args.stack_b[i + 1];
+		i++;
+	}
 	printf("pa\n");
 }
