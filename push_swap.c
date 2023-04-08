@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 22:14:36 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/08 22:34:15 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/08 22:56:02 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,6 @@ int	main(int argc, char *argv[])
 	sort_args_using_only_actions();
 	free(args);
 	free_a(s_args.stack_b);
- 
-	// check_leaks();
-	// int c = 0;
-	// while (s_args.stack_a[c])
-	// {
-	// 	printf("%s\n", s_args.stack_a[c]);
-	// 	c++;
-	// }
- 
+	// while (1);
 	return (0);
 }
