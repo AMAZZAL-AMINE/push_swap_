@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 22:14:36 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/08 22:56:02 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/08 23:29:20 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ int	main(int argc, char *argv[])
 	sort_args_using_only_actions();
 	free(args);
 	free_a(s_args.stack_b);
-	// while (1);
 	return (0);
 }
+	
