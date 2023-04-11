@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:40:23 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/07 18:48:49 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:55:18 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	find_position_of_max_nbr(void)
 	index = 0;
 	while (s_args.stack_b[index])
 	{
-		if (ft_atoi(s_args.stack_b[index]) == find_the_max_nbr_stack_b())
+		if (s_args.stack_b[index] == find_the_max_nbr_stack_b())
 		{
 			position = index;
 			break ;
@@ -38,13 +38,13 @@ int	find_position_of_max_nbr(void)
 
 void	sorting_from_stack_b(void)
 {
-	while (count_length_stack_b())
+	while (s_args.arrb_size)
 	{
 		var.pos_max = find_position_of_max_nbr();
-		var.size = count_length_stack_b() / 2;
+		var.size = s_args.arrb_size / 2;
 		if (var.pos_max > var.size)
 		{
-			var.index = count_length_stack_b() - 1;
+			var.index = s_args.arrb_size - 1;
 			while (var.index >= var.pos_max)
 			{
 				bottom_number_go_to_up_and_push_down_by_one_stack_b();

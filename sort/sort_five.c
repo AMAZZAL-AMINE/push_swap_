@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 14:21:21 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/07 14:59:48 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:24:44 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,14 @@ void	sort_five_args(void)
 	count = 0;
 	while (count < 2)
 	{
-		if (ft_atoi(s_args.stack_a[count_length_stack_a() - 1]) \
+		if (s_args.stack_a[s_args.arr_size - 1] \
 			== find_min_nbr())
 		{
 			bottom_number_go_to_up_and_push_down_by_one();
 		}
-		if (ft_atoi(s_args.stack_a[0]) == find_min_nbr())
+		if (s_args.stack_a[0] == find_min_nbr())
 		{
 			send_top_of_a_to_top_of_b();
-			s_args.arr_size -= 1;
 			count++;
 		}
 		else

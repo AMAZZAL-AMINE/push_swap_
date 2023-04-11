@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 22:50:14 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/08 23:34:06 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:45:13 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@ void	check_duplaicate_nbrs(void)
 	int	i;
 
 	count = 0;
-	while (s_args.stack_a[count])
+	while (count < s_args.arr_size)
 	{
 		i = 0;
-		while (s_args.stack_a[i])
+		while (i < s_args.arr_size)
 		{
-			if (ft_atoi(s_args.stack_a[count]) == ft_atoi(s_args.stack_a[i])
-				&& count != i)
+			if ((s_args.stack_a[count] == s_args.stack_a[i]) && count != i)
 			{
 				ft_putstr("Error\n");
 				exit(1);

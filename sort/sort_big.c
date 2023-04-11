@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:20:15 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/07 20:32:43 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:35:52 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ struct	s_used_vars {
 	int		range_min;
 	int		range_max;
 	int		end;
-	char	**arr;
+	int		*arr;
 } var;
 
 void	check_if_rand_big(void)
@@ -34,9 +34,9 @@ void	check_if_rand_big(void)
 void	check_if_the_min_are_in_bototm(void)
 {
 	check_if_rand_big();
-	while (s_args.stack_a[count_length_stack_a() - 1] && \
-		ft_atoi(s_args.stack_a[count_length_stack_a() - 1]) <= \
-		ft_atoi(var.arr[var.range_max]))
+	while (s_args.stack_a[s_args.arr_size - 1] && \
+		s_args.stack_a[s_args.arr_size - 1] <= \
+		var.arr[var.range_max])
 	{
 		bottom_number_go_to_up_and_push_down_by_one();
 	}
@@ -44,9 +44,9 @@ void	check_if_the_min_are_in_bototm(void)
 
 void	check_index_belong_to_range(void)
 {
-	if (var.arr[var.range_max] && \
-		ft_atoi(s_args.stack_a[0]) >= ft_atoi(var.arr[var.range_min]) && \
-		ft_atoi(s_args.stack_a[0]) <= ft_atoi(var.arr[var.range_max]))
+	if (var.range_max < s_args.fake_size && \
+		s_args.stack_a[0] >= var.arr[var.range_min] && \
+		s_args.stack_a[0] <= var.arr[var.range_max])
 	{
 		send_top_of_a_to_top_of_b();
 		if (var.range_max < var.end)
@@ -60,10 +60,10 @@ void	check_index_belong_to_range(void)
 void	sort_big(void)
 {
 	check_if_the_min_are_in_bototm();
-	while (count_length_stack_a() - 1)
+	while (s_args.arr_size)
 	{
-		check_index_belong_to_range();
-		if (ft_atoi(s_args.stack_a[0]) < ft_atoi(var.arr[var.range_min]))
+		
+		if (s_args.stack_a[0] < var.arr[var.range_min])
 		{
 			send_top_of_a_to_top_of_b();
 			top_nbr_go_to_bottom_and_shift_up_by_one_stack_b();
@@ -73,13 +73,15 @@ void	sort_big(void)
 				var.range_min++;
 			}
 		}
-		if (var.arr[var.range_max] && \
-			ft_atoi(s_args.stack_a[0]) > ft_atoi(var.arr[var.range_max]))
+		else if (var.range_max <= s_args.fake_size && \
+			s_args.stack_a[0] > var.arr[var.range_max])
 		{
 			top_nbr_go_to_bottom_and_shift_up_by_one();
 		}
+		else
+			check_index_belong_to_range();
 	}
-	if (s_args.stack_a[0])
-	send_top_of_a_to_top_of_b();
+	if (s_args.arr_size)
+		send_top_of_a_to_top_of_b();
 	sorting_from_stack_b();
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   max_nbr_and_min_nbr_stack_b.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:04:36 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/03/29 23:05:14 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:35:55 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	find_the_max_nbr_stack_b(void)
 	int	max_nbr;
 
 	count = 0;
-	max_nbr = ft_atoi(s_args.stack_b[0]);
-	while (s_args.stack_b[count])
+	max_nbr = s_args.stack_b[0];
+	while (count < s_args.arrb_size)
 	{
-		if (ft_atoi(s_args.stack_b[count]) > max_nbr)
+		if (s_args.stack_b[count] > max_nbr)
 		{
-			max_nbr = ft_atoi(s_args.stack_b[count]);
+			max_nbr = s_args.stack_b[count];
 		}
 		count++;
 	}
@@ -36,12 +36,12 @@ int	find_min_nbr_stack_b(void)
 	int	min_nbr;
 
 	count = 0;
-	min_nbr = ft_atoi(s_args.stack_b[0]);
-	while (s_args.stack_b[count])
+	min_nbr = s_args.stack_b[0];
+	while (count < s_args.arrb_size)
 	{
-		if (ft_atoi(s_args.stack_b[count]) < min_nbr)
+		if (s_args.stack_b[count] < min_nbr)
 		{
-			min_nbr = ft_atoi(s_args.stack_b[count]);
+			min_nbr = s_args.stack_b[count];
 		}
 		count++;
 	}

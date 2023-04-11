@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count_lenght_of_array.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:08:27 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/03/29 23:08:28 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/10 16:38:01 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,10 @@
 
 int	count_length_stack_a(void)
 {
-	int	count;
-
-	count = 0;
-	while (s_args.stack_a[count])
-	{
-		count++;
-	}
-	return (count);
+	return (s_args.arr_size);
 }
 
 int	count_length_stack_b(void)
 {
-	int	count;
-
-	count = 0;
-	while (s_args.stack_b[count])
-	{
-		count++;
-	}
-	return (count);
+	return (s_args.arrb_size);
 }

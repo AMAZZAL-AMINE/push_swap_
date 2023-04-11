@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_one_hundred.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:06:23 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/06 23:23:14 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:38:36 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ struct	s_used_vars {
 	int		range_min;
 	int		range_max;
 	int		end;
-	char	**arr;
+	int		*arr;
 } var;
 
 void	set_value_for_vars(void)
@@ -25,25 +25,23 @@ void	set_value_for_vars(void)
 
 	var.range_min = 0;
 	var.range_max = 15;
-	var.end = count_length_stack_a() - 1;
+	var.end = s_args.arr_size - 1;
 	var.arr = bubble_sort();
-	size = count_length_stack_a() - 1;
+	size = s_args.arr_size - 1;
 	if (var.range_max > var.end)
 		var.range_max = var.end;
-	while (size && \
-		ft_atoi(s_args.stack_a[size]) <= \
-		ft_atoi(var.arr[size]))
+	while (var.range_max < s_args.fake_size && \
+		s_args.stack_a[size] <= \
+		var.arr[var.range_max])
 	{
 		bottom_number_go_to_up_and_push_down_by_one();
-		size--;
 	}
 }
 
 void	check_first_index_belong_to_range(void)
 {
-	if (var.arr[var.range_max] && \
-		ft_atoi(s_args.stack_a[0]) >= ft_atoi(var.arr[var.range_min]) && \
-		ft_atoi(s_args.stack_a[0]) <= ft_atoi(var.arr[var.range_max]))
+	if (s_args.stack_a[0] >= var.arr[var.range_min] && \
+		s_args.stack_a[0] <= var.arr[var.range_max])
 	{
 		send_top_of_a_to_top_of_b();
 		if (var.range_max < var.end)
@@ -57,10 +55,9 @@ void	check_first_index_belong_to_range(void)
 void	sort_one_hundred_nbrs(void)
 {
 	set_value_for_vars();
-	while (count_length_stack_a() - 1)
+	while (s_args.arr_size - 1)
 	{
-		check_first_index_belong_to_range();
-		if (ft_atoi(s_args.stack_a[0]) < ft_atoi(var.arr[var.range_min]))
+		if (s_args.stack_a[0] < var.arr[var.range_min])
 		{
 			send_top_of_a_to_top_of_b();
 			top_nbr_go_to_bottom_and_shift_up_by_one_stack_b();
@@ -70,13 +67,15 @@ void	sort_one_hundred_nbrs(void)
 				var.range_min++;
 			}
 		}
-		if (var.arr[var.range_max] && \
-			ft_atoi(s_args.stack_a[0]) > ft_atoi(var.arr[var.range_max]))
+		else if (var.range_max < s_args.fake_size && \
+			s_args.stack_a[0] > var.arr[var.range_max])
 		{
 			top_nbr_go_to_bottom_and_shift_up_by_one();
 		}
+		else
+			check_first_index_belong_to_range();
 	}
-	if (s_args.stack_a[0])
+	if (s_args.arr_size)
 		send_top_of_a_to_top_of_b();
 	sorting_from_stack_b();
 }
