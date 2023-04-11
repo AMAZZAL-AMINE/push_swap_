@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:21:32 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 23:35:59 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:01:55 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ struct s_args_info
 	int		fake_size;
 } s_args;
 
+void 	check_leaks(void);
 int		*get_all_args(char *args);
 void	sort_args_using_only_actions(void);
 void	swap_a(void);

@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 18:06:23 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 22:38:36 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:40:10 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ struct	s_used_vars {
 void	set_value_for_vars(void)
 {
 	int	size;
+	int	count;
 
+	count = 0;
 	var.range_min = 0;
 	var.range_max = 15;
 	var.end = s_args.arr_size - 1;
@@ -30,11 +32,12 @@ void	set_value_for_vars(void)
 	size = s_args.arr_size - 1;
 	if (var.range_max > var.end)
 		var.range_max = var.end;
-	while (var.range_max < s_args.fake_size && \
-		s_args.stack_a[size] <= \
-		var.arr[var.range_max])
+	while (count < size && \
+		s_args.stack_a[size] <= var.arr[var.range_max] && \
+		s_args.stack_a[size] >= var.arr[var.range_min])
 	{
 		bottom_number_go_to_up_and_push_down_by_one();
+		count++;
 	}
 }
 

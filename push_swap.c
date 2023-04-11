@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 22:14:36 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 23:43:59 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:40:27 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,10 @@ int	main(int argc, char *argv[])
 	check_duplaicate_nbrs();
 	check_if_already_sorted();
 	sort_args_using_only_actions();
+	free(args);
+	free(s_args.stack_a);
+	free(s_args.stack_b);
+	free(s_args.fake_args);
+	// check_leaks();
 	return (0);
 }
