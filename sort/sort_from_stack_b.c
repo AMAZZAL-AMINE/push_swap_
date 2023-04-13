@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 17:40:23 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 16:55:18 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:14:14 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	find_position_of_max_nbr(void)
 	int	index;
 
 	index = 0;
-	while (s_args.stack_b[index])
+	while (s_args.arrb_size > index)
 	{
 		if (s_args.stack_b[index] == find_the_max_nbr_stack_b())
 		{
