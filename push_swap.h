@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:21:32 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/11 16:01:55 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:55:11 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
-# include <limits.h>
 
 struct s_args_info
 {
@@ -29,9 +28,7 @@ struct s_args_info
 	int		arrb_size;
 	int		fake_size;
 } s_args;
-
-void 	check_leaks(void);
-int		*get_all_args(char *args);
+int		*get_all_args(char *arg);
 void	sort_args_using_only_actions(void);
 void	swap_a(void);
 void	top_nbr_go_to_bottom_and_shift_up_by_one(void);
@@ -56,17 +53,18 @@ void	sort_three_args(void);
 void	sort_one_hundred_nbrs(void);
 void	sort_big(void);
 void	sorting_from_stack_b(void);
-void	free_a(int *freyage, int size);
 int		*bubble_sort(void);
-void	check_duplaicate_nbrs(void);
-void	check_valid_numbers(char **argv);
-void	check_if_already_sorted(void);
-void	check_max_and_min(void);
+void	check_duplaicate_nbrs(char *arg);
+void	check_valid_numbers(char **argv, char *arg);
+void	check_if_already_sorted(char *args);
 void	ft_putstr(char *str);
-void	check_empty_args(char **args);
-int 	count_numbers_in_args(char *args);
+void	check_empty_args(char **args, char *arg);
+int		count_numbers_in_args(char *arg);
 char	*get_tal_space(char *str);
-int 	count_items_in_argv(char **av);
-char 	*set_argv_in_one_array(char **av);
+int		count_items_in_argv(char **av);
+char	*set_argv_in_one_array(char **av);
+void	free_all(void);
+void	error_msg(char *arg);
+void	error_msg_two(char *arg);
 
 #endif

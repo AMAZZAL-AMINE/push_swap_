@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_a.c                                           :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 23:06:11 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 23:24:16 by mamazzal         ###   ########.fr       */
+/*   Created: 2023/04/12 20:14:01 by mamazzal          #+#    #+#             */
+/*   Updated: 2023/04/13 01:45:56 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	free_a(int *freyage, int size)
-// {
-// 	int	count;
-	
-// 	count = 0;
-// 	//free address
-// 	while (count < size)
-// 	{
-// 		free(freyage[count]);
-// 		count++;
-// 	}
-// }
+void	free_all(void)
+{
+	free(s_args.stack_a);
+	free(s_args.stack_b);
+	free(s_args.fake_args);
+}

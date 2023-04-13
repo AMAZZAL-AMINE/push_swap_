@@ -6,13 +6,13 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 22:50:14 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 16:45:13 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:28:53 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	check_duplaicate_nbrs(void)
+void	check_duplaicate_nbrs(char *args)
 {
 	int	count;
 	int	i;
@@ -25,8 +25,7 @@ void	check_duplaicate_nbrs(void)
 		{
 			if ((s_args.stack_a[count] == s_args.stack_a[i]) && count != i)
 			{
-				ft_putstr("Error\n");
-				exit(1);
+				error_msg(args);
 			}
 			i++;
 		}

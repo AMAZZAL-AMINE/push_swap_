@@ -6,13 +6,12 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:24:49 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 17:59:20 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:53:22 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-// sb
 void	swap_b(void)
 {
 	int	temp;
@@ -20,19 +19,17 @@ void	swap_b(void)
 	temp = s_args.stack_b[1];
 	s_args.stack_b[1] = s_args.stack_b[0];
 	s_args.stack_b[0] = temp;
-	printf("sb\n");
+	write(1, "sb\n", 3);
 }
 
-// rb => rotate stack b;
 void	top_nbr_go_to_bottom_and_shift_up_by_one_stack_b(void)
 {
 	int		count;
-	int	top_elemn;
-	int	size;
+	int		top_elemn;
+	int		size;
 
-	//no leaks
 	top_elemn = s_args.stack_b[0];
-	count	= 0;
+	count = 0;
 	size = s_args.arrb_size - 1;
 	while (count < size)
 	{
@@ -40,30 +37,38 @@ void	top_nbr_go_to_bottom_and_shift_up_by_one_stack_b(void)
 		count++;
 	}
 	s_args.stack_b[count] = top_elemn;
-	printf("rb\n");
+	write(1, "rb\n", 3);
 }
 
 // rrb
-void bottom_number_go_to_up_and_push_down_by_one_stack_b(void)
+void	bottom_number_go_to_up_and_push_down_by_one_stack_b(void)
 {
-    int count = s_args.arrb_size - 1;
-    int index = 0;
-    int last_elemn = s_args.stack_b[s_args.arrb_size - 1];
-    while (count)
-    {
-        s_args.stack_b[count] = s_args.stack_b[count - 1];
-        count--;
-    }
-    s_args.stack_b[index] = last_elemn;
-    printf("rrb\n");
+	int	count;
+	int	index;
+	int	last_elemn;
+
+	count = s_args.arrb_size - 1;
+	index = 0;
+	last_elemn = s_args.stack_b[s_args.arrb_size - 1];
+	while (count)
+	{
+		s_args.stack_b[count] = s_args.stack_b[count - 1];
+		count--;
+	}
+	s_args.stack_b[index] = last_elemn;
+	write(1, "rrb\n", 4);
 }
 
-void send_top_of_b_to_top_of_a(void)
+void	send_top_of_b_to_top_of_a(void)
 {
-	int top_of_b = s_args.stack_b[0];
+	int	top_of_b;
+	int	count;
+	int	i;
+
+	top_of_b = s_args.stack_b[0];
 	s_args.arr_size++;
-	int count = s_args.arr_size;
-	int i = 0;
+	count = s_args.arr_size;
+	i = 0;
 	while (count)
 	{
 		s_args.stack_a[count] = s_args.stack_a[count - 1];
@@ -78,5 +83,5 @@ void send_top_of_b_to_top_of_a(void)
 		i++;
 	}
 	s_args.arrb_size--;
-	printf("pa\n");
+	write(1, "pa\n", 3);
 }

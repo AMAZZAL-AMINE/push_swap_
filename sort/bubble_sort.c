@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:55:30 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 16:45:31 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:47:46 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	*bubble_sort(void)
 	while (count < s_args.fake_size)
 	{
 		index = 0;
-		while (arr[index + 1])
+		while ((index + 1) < s_args.fake_size)
 		{
 			if (arr[index] > arr[index + 1])
 			{

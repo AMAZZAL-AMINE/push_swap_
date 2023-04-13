@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:56:32 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/11 16:49:37 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:44:29 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,24 @@ char	*set_argv_in_one_array(char **av)
 	int		j;
 
 	count = 0;
-	index = 0;
-	dst = malloc(sizeof(char) * count_items_in_argv(av));
+	dst = malloc(sizeof(char) * (count_items_in_argv(av) + 1));
+	if (!dst)
+		return (NULL);
 	j = 0;
 	while (av[count])
 	{
 		index = 0;
 		while (av[count][index])
 		{
-				dst[j] = av[count][index];
-				j++;
-				index++;
+			dst[j] = av[count][index];
+			j++;
+			index++;
 		}
 		dst[j] = ' ';
 		j++;
 		count++;
 	}
+	dst[j] = '\0';
 	return (dst);
 }
 
@@ -115,12 +117,11 @@ int	*get_all_args(char *args)
 	int		*dst;
 	char	*tmp;
 
-	dst = NULL;
 	count = 0;
 	index = 0;
 	dst = malloc(sizeof(int *) * (count_numbers_in_args(args)));
-	arg_size = count_numbers_in_args(args);
-	while (arg_size)
+	arg_size = count_numbers_in_args(args) + 1;
+	while (--arg_size)
 	{
 		while (args[count] == ' ' && args[count] != '\0')
 			count++;
@@ -131,7 +132,6 @@ int	*get_all_args(char *args)
 		index++;
 		while (args[count] != ' ' && args[count] != '\0')
 			count++;
-		arg_size--;
 		free(tmp);
 	}
 	s_args.arr_size = index;

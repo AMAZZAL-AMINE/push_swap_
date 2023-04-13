@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:23:23 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/10 16:40:11 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:54:20 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,24 @@ int	is_num(char c)
 	return (0);
 }
 
-void	error_msg(void)
+int	check_what_near_minus(char **argv, int index, int count)
 {
-	ft_putstr("Error\n");
+	if (index != 0 && argv[count][index - 1] == ' ')
+		return (1);
+	else if (index == 0)
+		return (1);
+	else
+		return (0);
+}
+
+void	error_msg_two(char *arg)
+{
+	free(arg);
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
-void	check_valid_numbers(char **argv)
+void	check_valid_numbers(char **argv, char *args)
 {
 	int	c;
 	int	i;
@@ -43,13 +54,14 @@ void	check_valid_numbers(char **argv)
 			{
 				if (argv[c][i] == '-' || argv[c][i] == '+')
 				{
-					if (!is_num(argv[c][i + 1]) || i != 0)
-						error_msg();
+					if (!is_num(argv[c][i + 1]) ||
+						!check_what_near_minus(argv, i, c))
+						error_msg_two(args);
 				}
 				i++;
 			}
 			else
-				error_msg();
+				error_msg_two(args);
 		}
 	}
 }

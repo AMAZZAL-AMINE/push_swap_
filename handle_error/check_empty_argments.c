@@ -6,13 +6,13 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 20:34:59 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/08 23:30:30 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/13 01:36:51 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	check_empty_args(char **args)
+void	check_empty_args(char **args, char *arr)
 {
 	int	count;
 	int	index;
@@ -33,8 +33,7 @@ void	check_empty_args(char **args)
 					index++;
 				}
 			}
-			ft_putstr("Error\n");
-			exit(1);
+			error_msg_two(arr);
 		}
 		count++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mamazzal <mamazzal@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 14:00:22 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/01 14:02:38 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:32:55 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putstr(char *str)
 	count = 0;
 	while (str[count])
 	{
-		write(1, &str[count], 1);
+		write(2, &str[count], 1);
 		count++;
 	}
 }
