@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:21:32 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/13 21:37:21 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/14 16:10:55 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 struct s_args_info
 {
-	int		size_b;
 	int		*stack_a;
 	int		*stack_b;
 	int		*fake_args;

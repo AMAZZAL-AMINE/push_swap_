@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 23:24:49 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/13 01:53:22 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/14 16:01:41 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	send_top_of_b_to_top_of_a(void)
 	s_args.stack_a[0] = top_of_b;
 	count = s_args.arrb_size;
 	i = 0;
-	while (i + 1 < count)
+	while (i < count)
 	{
 		s_args.stack_b[i] = s_args.stack_b[i + 1];
 		i++;
