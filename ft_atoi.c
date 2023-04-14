@@ -6,7 +6,7 @@
 /*   By: mamazzal <mamazzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 22:41:50 by mamazzal          #+#    #+#             */
-/*   Updated: 2023/04/13 18:24:29 by mamazzal         ###   ########.fr       */
+/*   Updated: 2023/04/14 01:47:27 by mamazzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,5 @@ long	ft_atoi(char *str)
 	}
 	check_max_and_min(result * ismis);
 	return (result * ismis);
+
 }
